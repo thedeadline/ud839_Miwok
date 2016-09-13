@@ -29,15 +29,44 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-
+        //Find view
+        TextView colorsView = (TextView) findViewById(R.id.colors);
+        // Tie a click listener to that view
+        colorsView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+        //Find view
+        TextView familyView = (TextView) findViewById(R.id.family);
+        // Tie a click listener to that view
+        familyView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
         //Find numbers view
         TextView numbersView = (TextView) findViewById(R.id.numbers);
         // Tie a click listener to that view
         numbersView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(i);
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+        //Find view
+        TextView phrasesView = (TextView) findViewById(R.id.phrases);
+        // Tie a click listener to that view
+        phrasesView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent familyIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(familyIntent);
             }
         });
     }
