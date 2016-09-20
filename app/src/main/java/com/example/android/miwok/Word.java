@@ -10,25 +10,25 @@ public class Word {
      */
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceID;
 
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mImageResourceID = 0;
     }
-
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceID = imageResourceID;
+    }
     public String getDefaultTranslation() {
         return mDefaultTranslation;
     }
-
-    public void setDefaultTranslation(String defaultTranslation) {
-        mDefaultTranslation = defaultTranslation;
-    }
-
     public String getMiwokTranslation() {
         return mMiwokTranslation;
     }
-
-    public void setMiwokTranslation(String miwokTranslation) {
-        mMiwokTranslation = miwokTranslation;
+    public int getImageResourceID() {
+        return mImageResourceID;
     }
 }

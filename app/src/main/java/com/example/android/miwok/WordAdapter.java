@@ -21,6 +21,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
      *
      * @param context the context
      * @param words   the words
+     *
      */
     public WordAdapter(Context context, ArrayList<Word> words) {
 
@@ -57,7 +58,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // set this text on the default TextView
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
-        // Return the whole list item layout (containing 2 TextViews)
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
+        imageView.setImageResource(currentWord.getImageResourceID());
+
+        // Return the whole list item layout (containing 2 TextViews and ImageView)
         // so that it can be shown in the ListView
         return listItemView;
     }
