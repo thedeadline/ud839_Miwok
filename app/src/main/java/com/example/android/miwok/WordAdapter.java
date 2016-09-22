@@ -23,14 +23,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
      *
      * @param context the context
      * @param words   the words
-     *
+     * @param mColorResourceId the color resource ID
      */
     private int mColorResourceId;
 
     public WordAdapter(Context context, ArrayList<Word> words, int colorResourceId) {
         super(context, 0, words);
         mColorResourceId = colorResourceId;
-
     }
 
     /**
@@ -76,7 +75,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         LinearLayout textContainer = (LinearLayout) listItemView.findViewById(R.id.textContainer);
         //set bg color of text container view to the color that the resource ID maps to
         textContainer.setBackgroundColor(ContextCompat.getColor(getContext(),mColorResourceId));
-
         // Return the whole list item layout (containing 2 TextViews and ImageView)
         // so that it can be shown in the ListView
         return listItemView;
