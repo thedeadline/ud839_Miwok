@@ -11,11 +11,12 @@ public class Word {
     private String mDefaultTranslation;
     private String mMiwokTranslation;
     private int mImageResourceID;
+    private static final int NO_IMAGE_AVAILABLE = -1;
 
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mImageResourceID = 0;
+        mImageResourceID = NO_IMAGE_AVAILABLE;
     }
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceID) {
         mDefaultTranslation = defaultTranslation;
@@ -30,5 +31,8 @@ public class Word {
     }
     public int getImageResourceID() {
         return mImageResourceID;
+    }
+    public boolean imageAvailable(){
+        return mImageResourceID !=NO_IMAGE_AVAILABLE;
     }
 }
