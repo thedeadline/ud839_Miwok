@@ -14,22 +14,27 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:paddingLeft="16dp"
         android:id="@+id/textContainer">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         tools:text="Miwok"
         android:id="@+id/miwokTextView"
-        android:paddingTop="16dp"
-        android:paddingLeft="16dp"/>
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:gravity="bottom"
+        />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         tools:text="default"
         android:id="@+id/defaultTextView"
-        android:paddingTop="16dp"
-        android:paddingLeft="16dp"/>
+        android:gravity="top"
+        />
     </LinearLayout>
 </LinearLayout>
