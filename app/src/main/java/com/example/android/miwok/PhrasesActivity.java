@@ -37,7 +37,7 @@ public class PhrasesActivity extends AppCompatActivity {
         // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id ) {
+        public void onItemClick(AdapterView<?> adapterView, View view, int position, long id ) {
                 // Get the {@link Word} object at the given position the user clicked on
                 Word word = words.get(position);
 
