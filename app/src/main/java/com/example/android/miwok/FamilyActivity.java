@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.media.MediaPlayer;
 import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
-    private MediaPlayer mMediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,18 +39,11 @@ public class FamilyActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id){
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 // Get the {@link Word} object at the given position the user clicked on
                 Word word = words.get(position);
-
-                mMediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudioResourceID());
-
-                // Start the audio file
-                mMediaPlayer.start();
-
-
-                }
-            });
-        }
+                MediaPlayerHandler.handler(FamilyActivity.this, word.getAudioResourceID());
+            }
+        });
     }
-
+}
