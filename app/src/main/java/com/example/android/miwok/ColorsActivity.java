@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import android.media.MediaPlayer;
 
 public class ColorsActivity extends AppCompatActivity {
-    /** Handles playback of all the sound files */
-    private MediaPlayer mMediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +35,7 @@ public class ColorsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id ) {
                 // Get the {@link Word} object at the given position the user clicked on
                 Word word = words.get(position);
-
-                // Create and setup the {@link MediaPlayer} for the audio resource associated
-                // with the current word
-                mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getAudioResourceID());
-
-                // Start the audio file
-                mMediaPlayer.start();
+                MediaPlayerHandler.handler(ColorsActivity.this, word.getAudioResourceID());
             }
         });
     }

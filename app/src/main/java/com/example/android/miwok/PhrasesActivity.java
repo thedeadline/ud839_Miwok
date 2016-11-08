@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import android.widget.AdapterView;
 
 public class PhrasesActivity extends AppCompatActivity {
-    private MediaPlayer mMediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +39,7 @@ public class PhrasesActivity extends AppCompatActivity {
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long id ) {
                 // Get the {@link Word} object at the given position the user clicked on
                 Word word = words.get(position);
-
-                // Create and setup the {@link MediaPlayer} for the audio resource associated
-                // with the current word
-                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceID());
-
-                // Start the audio file
-                mMediaPlayer.start();
+                MediaPlayerHandler.handler(PhrasesActivity.this, word.getAudioResourceID());
             }
         });
     }
